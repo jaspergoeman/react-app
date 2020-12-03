@@ -1,0 +1,44 @@
+@import '../../variables.scss';
+
+.beam {
+    text-transform: uppercase;
+    font-weight: $font-weight-semibold;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        li {
+            margin-right: .4rem;
+            margin-bottom: .8rem;
+            font-size: .8rem;
+
+            a {
+                color: white;
+            }
+            
+        }
+    }
+    &__subgroup__isSelected{
+        a{
+        text-decoration: overline;
+        }
+    }
+    &__topic__isSelected{
+        a{
+            text-decoration: overline;
+            }
+    }
+    &__input {
+        display: none;
+        background: transparent;
+        color: $color-white;
+        border-bottom: 2px solid $color-third;
+        &--show{
+            display: inline;
+        }
+    }
+
+}
