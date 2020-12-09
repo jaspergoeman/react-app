@@ -11,9 +11,36 @@ class Beam extends React.Component {
     super(props);
     this.state = {topic: "",
                   subgroup: "",
-                  showInput: false
+                  showInput: false,
                 };
     
+  }
+  getSubgroups(){
+    var subgroups = ["EMPIRische THERAPIE",
+    "GERICHTE THERAPIE",
+    "MIDdelEN",
+    "PROFYLAXE",
+    "TDM"
+];
+    return subgroups;
+  }
+  getTopics(){
+    var topics = ["ABDOMINAAL",
+    "CARDIOVASCULAIR",
+    "CENTRAAL ZENUWSTELSEL",
+    "GISTEN EN SCHIMMELS",
+    "HUID EN WEKE DELEN",
+    "NEUS-KEEL-OOR",
+    "NEUTROPENE KOORTS",
+    "OOG",
+    "ORTHOPEDIE",
+    "REISGENEESKUNDE",
+    "RESPIRATOIR",
+    "SEPSIS",
+    "URINAIR",
+    "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
+];
+    return topics;
   }
   
 selectSubgroup(type){
@@ -38,7 +65,7 @@ selectTopic(type){
               <div className="App-container App-container--xl">
                 <div className="beam">
                 <ul>
-                  {this.props.subgroups.map((type) => <li id={type} key={type}>
+                  {this.getSubgroups().map((type) => <li id={type} key={type}>
                     <a className={this.state.subgroup === type ? 'beam__isSelected' : '' }
                      onClick={() => this.selectSubgroup(type)}>{type}</a> </li>)}
                   <div className="beam__div-item">
@@ -57,7 +84,7 @@ selectTopic(type){
           <div className="App-container App-container--xl">
             <div className="beam">
             <ul>
-                  {this.props.topics.map((type) => <li id={type} key={type}>
+                  {this.getTopics().map((type) => <li id={type} key={type}>
                     <a className={this.state.topic === type ? 'beam__isSelected' :''}
                     onClick={() => this.selectTopic(type)}>{type}</a> </li>)}
                 </ul>

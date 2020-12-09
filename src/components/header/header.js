@@ -17,7 +17,6 @@ class Header extends React.Component {
       this.setState({
         selectedDoelgroep: doelgroep
       });
-      console.log(this.state.selectedDoelgroep);
   };
     
     render() {

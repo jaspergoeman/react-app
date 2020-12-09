@@ -10,66 +10,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       beamType: null,
-      subgroups: ["EMPIRische THERAPIE",
-      "GERICHTE THERAPIE",
-      "MIDdelEN",
-      "PROFYLAXE",
-      "TDM"
-  ],
-      topics: ["ABDOMINAAL",
-      "CARDIOVASCULAIR",
-      "CENTRAAL ZENUWSTELSEL",
-      "GISTEN EN SCHIMMELS",
-      "HUID EN WEKE DELEN",
-      "NEUS-KEEL-OOR",
-      "NEUTROPENE KOORTS",
-      "OOG",
-      "ORTHOPEDIE",
-      "REISGENEESKUNDE",
-      "RESPIRATOIR",
-      "SEPSIS",
-      "URINAIR",
-      "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
-  ],
       doelgroep: ""
     }
   }
-  getSubgroups() {
-    this.setState({
-      subgroups : ["EMPIRische THERAPIE",
-        "GERICHTE THERAPIE",
-        "MIDdelEN",
-        "PROFYLAXE",
-        "TDM"
-    ]}) ;
-  }
-
-   getTopics() {
-    this.setState({
-    topics : ["ABDOMINAAL",
-        "CARDIOVASCULAIR",
-        "CENTRAAL ZENUWSTELSEL",
-        "GISTEN EN SCHIMMELS",
-        "HUID EN WEKE DELEN",
-        "NEUS-KEEL-OOR",
-        "NEUTROPENE KOORTS",
-        "OOG",
-        "ORTHOPEDIE",
-        "REISGENEESKUNDE",
-        "RESPIRATOIR",
-        "SEPSIS",
-        "URINAIR",
-        "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
-    ]});
-}
-
   beamTypeCallback = (childData) => {
     this.setState({beamType: childData});
-    console.log(childData);
   }
   doelgroepCallback = (childData) => {
     this.setState({doelgroep: childData});
-    console.log(childData);
   }
 
   render (){
@@ -78,7 +26,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <Header parentCallback={this.doelgroepCallback}/>
-      <Beam parentCallback={this.beamTypeCallback} subgroups={this.state.subgroups} topics={this.state.topics}/>
+      <Beam parentCallback={this.beamTypeCallback} />
     </div>
   );
 }
