@@ -18,7 +18,8 @@ class Beam extends React.Component {
   
 selectSubgroup(type){
   this.setState({
-    subgroup : type
+    subgroup : type,
+    showInput: false
   });
 }
 selectTopic(type){
@@ -41,7 +42,7 @@ selectTopic(type){
                     <a className={this.state.subgroup === type ? 'beam__isSelected' : '' }
                      onClick={() => this.selectSubgroup(type)}>{type}</a> </li>)}
                   <div className="beam__div-item">
-                  <input className={this.state.showInput ? '' : 'beam__input'} type="text" placeholder="zoekterm"/>
+                  {this.state.showInput && <input className={"beam__input"} type="text" placeholder="zoekterm"/>}
                    <div className="clickable beam__search" >
                      <FontAwesomeIcon  icon={faSearch} onMouseEnter={() => this.setState({showInput: true})}/>
                      </div>

@@ -10,22 +10,43 @@ class App extends React.Component {
     super(props);
     this.state = {
       beamType: null,
-      subgroups: [],
-      topics: [],
+      subgroups: ["EMPIRische THERAPIE",
+      "GERICHTE THERAPIE",
+      "MIDdelEN",
+      "PROFYLAXE",
+      "TDM"
+  ],
+      topics: ["ABDOMINAAL",
+      "CARDIOVASCULAIR",
+      "CENTRAAL ZENUWSTELSEL",
+      "GISTEN EN SCHIMMELS",
+      "HUID EN WEKE DELEN",
+      "NEUS-KEEL-OOR",
+      "NEUTROPENE KOORTS",
+      "OOG",
+      "ORTHOPEDIE",
+      "REISGENEESKUNDE",
+      "RESPIRATOIR",
+      "SEPSIS",
+      "URINAIR",
+      "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
+  ],
       doelgroep: ""
     }
   }
   getSubgroups() {
-    this.state.subgroups = ["EMPIRische THERAPIE",
+    this.setState({
+      subgroups : ["EMPIRische THERAPIE",
         "GERICHTE THERAPIE",
         "MIDdelEN",
         "PROFYLAXE",
         "TDM"
-    ];
+    ]}) ;
   }
 
    getTopics() {
-    this.state.topics = ["ABDOMINAAL",
+    this.setState({
+    topics : ["ABDOMINAAL",
         "CARDIOVASCULAIR",
         "CENTRAAL ZENUWSTELSEL",
         "GISTEN EN SCHIMMELS",
@@ -39,7 +60,7 @@ class App extends React.Component {
         "SEPSIS",
         "URINAIR",
         "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
-    ];
+    ]});
 }
 
   beamTypeCallback = (childData) => {
@@ -52,8 +73,8 @@ class App extends React.Component {
   }
 
   render (){
-    this.getTopics();
-    this.getSubgroups();
+    //this.getTopics();
+    //this.getSubgroups();
   return (
     <div className="App">
       <Header parentCallback={this.doelgroepCallback}/>

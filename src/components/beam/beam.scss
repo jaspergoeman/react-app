@@ -30,15 +30,15 @@
         display: flex;
     }
     &__input {
-        display: none;
+        display: flex;
         background: transparent;
         color: $color-white;
         border: none;
         border-bottom: 3px solid $color-third;
         color: $color-white;
-        &--show{
-            display: flex;
-        }
+        margin-top: -.6rem;
+        margin-right: .6rem;
+       
     }
     &__input:focus {
         outline: none;
