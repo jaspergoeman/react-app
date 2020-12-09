@@ -1,45 +1,34 @@
 import './beam.scss';
 import '../../App.scss';
-//import BeamSubgroup from './beam-subgroup-data.js';
-//import BeamTopics from './beam-topics-data.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import React from "react";
 
 class Beam extends React.Component {
    
+
   constructor(props) {
     super(props);
     this.state = {topic: "",
-                  subgroup: ""};
+                  subgroup: "",
+                  showInput: false
+                };
     
   }
   
-
-
 selectSubgroup(type){
-  this.state.subgroup = type;
-  console.log(this.state.subgroup);
-
-  if(document.getElementsByClassName("beam__subgroup__isSelected")[0]){
-    document.getElementsByClassName("beam__subgroup__isSelected")[0].classList.remove("beam__subgroup__isSelected");
-  };
-
-  document.getElementById(type).classList.add("beam__subgroup__isSelected");
-
+  this.setState({
+    subgroup : type
+  });
 }
 selectTopic(type){
-  this.state.topic = type;
-  console.log(this.state.topic);
-
-  if(document.getElementsByClassName("beam__topic__isSelected")[0]){ 
-    document.getElementsByClassName("beam__topic__isSelected")[0].classList.remove("beam__topic__isSelected");
-  };
-
-  document.getElementById(type).classList.add("beam__topic__isSelected");
-
+  this.setState({
+    topic : type,
+    showInput: false
+  });
   this.props.parentCallback(this.state);
 }
+
     
   render() {
     return (
@@ -48,12 +37,18 @@ selectTopic(type){
               <div className="App-container App-container--xl">
                 <div className="beam">
                 <ul>
-                  {this.props.subgroups.map((type) => <li id={type} key={type}><a  onClick={() => this.selectSubgroup(type)}>{type}</a> </li>)}
+                  {this.props.subgroups.map((type) => <li id={type} key={type}>
+                    <a className={this.state.subgroup === type ? 'beam__isSelected' : '' }
+                     onClick={() => this.selectSubgroup(type)}>{type}</a> </li>)}
+                  <div className="beam__div-item">
+                  <input className={this.state.showInput ? '' : 'beam__input'} type="text" placeholder="zoekterm"/>
+                   <div className="clickable beam__search" >
+                     <FontAwesomeIcon  icon={faSearch} onMouseEnter={() => this.setState({showInput: true})}/>
+                     </div>
+                   
+                   </div>
                 </ul>
-                <input  type="text" placeholder="zoekterm"/>
-                <div className="clickable beam__search" >
-                <FontAwesomeIcon  icon={faSearch} />
-                </div>
+               
                 </div>
               </div>
           </section>
@@ -61,7 +56,9 @@ selectTopic(type){
           <div className="App-container App-container--xl">
             <div className="beam">
             <ul>
-                  {this.props.topics.map((type) => <li id={type} key={type}><a onClick={() => this.selectTopic(type)}>{type}</a> </li>)}
+                  {this.props.topics.map((type) => <li id={type} key={type}>
+                    <a className={this.state.topic === type ? 'beam__isSelected' :''}
+                    onClick={() => this.selectTopic(type)}>{type}</a> </li>)}
                 </ul>
             </div>
           </div>

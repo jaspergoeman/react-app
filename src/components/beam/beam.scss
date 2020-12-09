@@ -21,24 +21,30 @@
             
         }
     }
-    &__subgroup__isSelected{
-        a{
+    &__isSelected{
+        
         text-decoration: overline;
-        }
+        
     }
-    &__topic__isSelected{
-        a{
-            text-decoration: overline;
-            }
+    &__div-item{
+        display: flex;
     }
     &__input {
         display: none;
         background: transparent;
         color: $color-white;
-        border-bottom: 2px solid $color-third;
+        border: none;
+        border-bottom: 3px solid $color-third;
+        color: $color-white;
         &--show{
-            display: inline;
+            display: flex;
         }
+    }
+    &__input:focus {
+        outline: none;
+    }
+    &__input::placeholder {
+        color: $color-white;
     }
 
 }

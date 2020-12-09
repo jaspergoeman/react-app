@@ -12,7 +12,7 @@ class App extends React.Component {
       beamType: null,
       subgroups: [],
       topics: [],
-      doelgroep: null
+      doelgroep: ""
     }
   }
   getSubgroups() {

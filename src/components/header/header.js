@@ -8,15 +8,16 @@ class Header extends React.Component {
 
     constructor(props) {
       super(props);
+      this.state ={
+        selectedDoelgroep: null,
+      }
     }
     SetDoelgroep(doelgroep){
-      if(doelgroep === "kinderen"){
-        document.getElementById("volwassenen").classList.remove("App-is-selected");
-      }else{
-        document.getElementById("kinderen").classList.remove("App-is-selected");
-      }
-      document.getElementById(doelgroep).classList.add("App-is-selected");
-      this.props.parentCallback(doelgroep);
+      //this.state.selectedDoelgroep = doelgroep;
+      this.setState({
+        selectedDoelgroep: doelgroep
+      });
+      console.log(this.state.selectedDoelgroep);
   };
     
     render() {
@@ -34,8 +35,8 @@ class Header extends React.Component {
             <div className="header__section--mid">
                 <h1>Antibioticagids</h1>
                 <ul>
-                    <li id="kinderen"><div className="clickable" onClick={() => {this.SetDoelgroep("kinderen")}}> Kinderen</div></li>
-                    <li id="volwassenen" className="App-is-selected"> <div className="clickable" onClick={() => {this.SetDoelgroep("volwassenen")}}>Volwassenen</div></li>
+                    <li id="kinderen" className={this.state.selectedDoelgroep === 'kinderen' ? 'App-is-selected' :''}><div className="clickable" onClick={() => {this.SetDoelgroep("kinderen")}}> Kinderen</div></li>
+                    <li id="volwassenen" className={this.state.selectedDoelgroep === 'volwassenen' ? 'App-is-selected' :''}> <div className="clickable" onClick={() => {this.SetDoelgroep("volwassenen")}}>Volwassenen</div></li>
                 </ul>
                 </div>
             <div className="header__section--right">
