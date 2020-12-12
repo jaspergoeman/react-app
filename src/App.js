@@ -21,8 +21,6 @@ class App extends React.Component {
   }
 
   render (){
-    //this.getTopics();
-    //this.getSubgroups();
   return (
     <div className="App">
       <Header parentCallback={this.doelgroepCallback}/>
