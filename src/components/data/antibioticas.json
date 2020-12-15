@@ -1,0 +1,12 @@
+[
+    {
+        "dosis": "12gr Oraal 2 weken",
+        "name": "Ceftriaxone",
+        "remark": "opmerking"
+    },
+    {
+        "dosis": "1gr Oraal 1 week",
+        "name": "Doxycycline",
+        "remark": "opmerking"
+    }
+]

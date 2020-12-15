@@ -3,20 +3,27 @@ import '../../App.scss';
 import logo_uz from '../../img/logo-uz.svg';
 import logo_u_gent from '../../img/logo-u-gent.svg';
 import React from 'react';
+import Doelgroepen from '../data/doelgroepen.json';
 
 class Header extends React.Component {
 
     constructor(props) {
       super(props);
       this.state ={
-        selectedDoelgroep: null,
+        doelgroepen: []
       }
     }
+    componentDidMount(){
+      this.setState({
+        doelgroepen: Doelgroepen
+      });
+    }
     SetDoelgroep(doelgroep){
-      //this.state.selectedDoelgroep = doelgroep;
       this.setState({
         selectedDoelgroep: doelgroep
       });
+      console.log(this.state.selectedDoelgroep);
+      this.props.parentCallback(this.state.selectedDoelgroep);
   };
     
     render() {
@@ -34,9 +41,10 @@ class Header extends React.Component {
             <div className="header__section--mid">
                 <h1>Antibioticagids</h1>
                 <ul>
-                    <li id="kinderen" className={this.state.selectedDoelgroep === 'kinderen' ? 'App-is-selected' :''}><div className="clickable" onClick={() => {this.SetDoelgroep("kinderen")}}> Kinderen</div></li>
-                    <li id="volwassenen" className={this.state.selectedDoelgroep === 'volwassenen' ? 'App-is-selected' :''}> <div className="clickable" onClick={() => {this.SetDoelgroep("volwassenen")}}>Volwassenen</div></li>
-                </ul>
+                    {this.state.doelgroepen.map((doelgroep) => 
+                    <li id={doelgroep.name} key={doelgroep.name} className={this.state.selectedDoelgroep === doelgroep.name ? 'App-is-selected' :''}><div className="clickable" onClick={() => {this.SetDoelgroep(doelgroep.name)}}> {doelgroep.name}</div></li>
+                    )}
+                   </ul>
                 </div>
             <div className="header__section--right">
               <ul>

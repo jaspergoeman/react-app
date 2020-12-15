@@ -3,6 +3,8 @@ import '../../App.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import React from "react";
+import Topics from "../data/topics.json";
+import Subgroups from "../data/subgroups.json";
 
 class Beam extends React.Component {
    
@@ -12,36 +14,18 @@ class Beam extends React.Component {
     this.state = {topic: "",
                   subgroup: "",
                   showInput: false,
+                  topics: [],
+                  subgroups: []
                 };
     
   }
-  getSubgroups(){
-    var subgroups = ["EMPIRische THERAPIE",
-    "GERICHTE THERAPIE",
-    "MIDdelEN",
-    "PROFYLAXE",
-    "TDM"
-];
-    return subgroups;
+  componentDidMount(){
+    this.setState({
+                  topics: Topics,
+                  subgroups: Subgroups
+    });
   }
-  getTopics(){
-    var topics = ["ABDOMINAAL",
-    "CARDIOVASCULAIR",
-    "CENTRAAL ZENUWSTELSEL",
-    "GISTEN EN SCHIMMELS",
-    "HUID EN WEKE DELEN",
-    "NEUS-KEEL-OOR",
-    "NEUTROPENE KOORTS",
-    "OOG",
-    "ORTHOPEDIE",
-    "REISGENEESKUNDE",
-    "RESPIRATOIR",
-    "SEPSIS",
-    "URINAIR",
-    "UROGENITAAL EN SEKSUEEL OVERDRAAGBARE INFECTIES"
-];
-    return topics;
-  }
+  
   
 selectSubgroup(type){
   this.setState({
@@ -65,9 +49,9 @@ selectTopic(type){
               <div className="App-container App-container--xl">
                 <div className="beam">
                 <ul>
-                  {this.getSubgroups().map((type) => <li id={type} key={type}>
-                    <a className={this.state.subgroup === type ? 'beam__isSelected' : '' }
-                     onClick={() => this.selectSubgroup(type)}>{type}</a> </li>)}
+                  {this.state.subgroups.map((type) => <li id={type.name} key={type.name}>
+                    <a className={this.state.subgroup === type.name ? 'beam__isSelected' : '' }
+                     onClick={() => this.selectSubgroup(type.name)}>{type.name}</a> </li>)}
                   <div className="beam__div-item">
                   {this.state.showInput && <input className={"beam__input"} type="text" placeholder="zoekterm"/>}
                    <div className="clickable beam__search" >
@@ -84,9 +68,9 @@ selectTopic(type){
           <div className="App-container App-container--xl">
             <div className="beam">
             <ul>
-                  {this.getTopics().map((type) => <li id={type} key={type}>
-                    <a className={this.state.topic === type ? 'beam__isSelected' :''}
-                    onClick={() => this.selectTopic(type)}>{type}</a> </li>)}
+                  {this.state.topics.map((type) => <li id={type.name} key={type.name}>
+                    <a className={this.state.topic === type.name ? 'beam__isSelected' :''}
+                    onClick={() => this.selectTopic(type.name)}>{type.name}</a> </li>)}
                 </ul>
             </div>
           </div>

@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Arthiritis",
+        "aandoningen": [
+            "Arthiritis"
+        ],
+        "subgroups": [
+            "empirische therapie"
+        ],
+        "topics": [
+            "Abdominaal"
+        ],
+        "doelgroep": "volwassenen"
+    },
+    {
+        "name": "Peritonitis",
+        "aandoningen": [
+            "secundaire peritonitis",
+            "spontane bacteriële peronitis"
+        ],
+        "subgroups": [
+            "empirische therapie"
+        ],
+        "topics": [
+            "Abdominaal"
+        ],
+        "doelgroep": "volwassenen"
+    }
+]
