@@ -8,5 +8,100 @@
         "dosis": "1gr Oraal 1 week",
         "name": "Doxycycline",
         "remark": "opmerking"
+    },
+    {
+        "dosis": "1gr Oraal 1 week",
+        "name": "Doxycycline",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Vancomycin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Teicoplanin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Linezolid",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Daptomycin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Trimethoprim",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Sulfamethoxazole",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Doxycycline",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Ceftobiprole",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Ceftaroline",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Clindamycin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Dalbavancin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Fusidic acid",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Mupirocin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Omadacycline",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Oritavancin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Tedizolid",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Telavancin",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
+    },
+    {
+        "name": "Tigecycline",
+        "dosis": "1gr Oraal 1 week",
+        "remark": "opmerking"
     }
 ]

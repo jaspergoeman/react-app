@@ -1,0 +1,42 @@
+[
+    {
+        "antibiotica": [
+            "Ceftriaxone",
+            "Doxycycline"
+        ],
+        "name": "Arthiritis"
+    },
+    {
+        "antibiotica": [
+            "Ceftriaxone",
+            "Doxycycline"
+        ],
+        "name": "spontane bacteriële peritonitis"
+    },
+    {
+        "antibiotica": [
+            "Ceftriaxone",
+            "Doxycycline"
+        ],
+        "name": "secundaire peritonitis"
+    },
+    {
+        "antibiotica": [
+            "Linezolid"
+        ],
+        "name": "Aandoening 1"
+    },
+    {
+        "antibiotica": [
+            "Ceftriaxone"
+        ],
+        "name": "Aandoening 2"
+    },
+    {
+        "antibiotica": [
+            "Ceftobiprole"
+        ],
+        "name": "Aandoening 3"
+    }
+    
+]

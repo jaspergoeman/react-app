@@ -1,0 +1,81 @@
+@import '../../variables.scss';
+.box{
+    position: absolute;
+    padding:   20rem calc(40vw /2);
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    &-title{
+        position: relative;
+        background-color: $color-white;
+        width: 60vw;
+        text-align: center;
+        color: $color-primary;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        padding:  1rem 0;
+        h2{
+        margin: 0;}
+    }
+    &-content{
+        background-color: $color-white;
+        width: 60vw;
+            box-sizing: border-box;
+    padding: 5rem 2rem;
+    outline: 2px solid $color-secondary;
+    outline-offset:  -2rem;
+    
+    }
+    &-columns{
+
+        display: flex;
+        justify-content: space-between;
+        margin-left: 2rem;
+        margin-right: 4rem;
+    }
+    &-subtitle{
+        font-size: 1.4rem;
+        color: $color-grey;
+    }
+    &-content-title{
+        margin-top: -3.1rem;
+        margin-left: -.1rem;
+        margin-right: -.1rem;
+        height: 4rem;
+        background-color: $color-secondary;
+        display: flex;
+        align-content: center;
+        h4{
+            margin:0;
+            font-size: 1.4rem;
+            margin-top: 1.3rem;
+            margin-left: 2rem;
+        }
+    }
+    &-item{
+        margin-bottom: 2rem;
+    }
+    &-item:last-child{
+        margin-bottom: 0;
+    }
+}
+.item{
+    &-name{
+        font-weight: 500;
+    }
+    &-remark{
+        font-style: italic;
+        color: goldenrod;
+    }
+    &-dosis{
+        font-weight: 300;
+    }
+}
+.close{
+       display: flex;
+    justify-content: flex-end;
+    padding-right: 1.4rem;
+    padding-top: .6rem;
+    background: $color-white;
+}

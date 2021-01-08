@@ -17,7 +17,7 @@ class Beam extends React.Component {
                   topics: [],
                   subgroups: []
                 };
-    
+    this.selectTopic = this.selectTopic.bind(this);
   }
   componentDidMount(){
     this.setState({
@@ -32,13 +32,14 @@ selectSubgroup(type){
     subgroup : type,
     showInput: false
   });
+  this.props.parentSubgroupCallback(this.state.subgroup);
 }
 selectTopic(type){
   this.setState({
     topic : type,
     showInput: false
   });
-  this.props.parentCallback(this.state);
+  this.props.parentTopicCallback(this.state.topic);
 }
 
     
@@ -51,7 +52,7 @@ selectTopic(type){
                 <ul>
                   {this.state.subgroups.map((type) => <li id={type.name} key={type.name}>
                     <a className={this.state.subgroup === type.name ? 'beam__isSelected' : '' }
-                     onClick={() => this.selectSubgroup(type.name)}>{type.name}</a> </li>)}
+                     onClick={() =>  this.selectSubgroup(type.name)}>{type.name}</a> </li>)}
                   <div className="beam__div-item">
                   {this.state.showInput && <input className={"beam__input"} type="text" placeholder="zoekterm"/>}
                    <div className="clickable beam__search" >

@@ -1,11 +1,11 @@
 [
     {
         "name": "Arthiritis",
-        "aandoningen": [
+        "aandoeningen": [
             "Arthiritis"
         ],
         "subgroups": [
-            "empirische therapie"
+            "Empirische therapie"
         ],
         "topics": [
             "Abdominaal"
@@ -14,12 +14,12 @@
     },
     {
         "name": "Peritonitis",
-        "aandoningen": [
+        "aandoeningen": [
             "secundaire peritonitis",
             "spontane bacteriële peronitis"
         ],
         "subgroups": [
-            "empirische therapie"
+            "Empirische therapie"
         ],
         "topics": [
             "Abdominaal"

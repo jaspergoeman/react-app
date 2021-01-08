@@ -5,26 +5,20 @@ import logo_u_gent from '../../img/logo-u-gent.svg';
 import React from 'react';
 import Doelgroepen from '../data/doelgroepen.json';
 
-class Header extends React.Component {
+class Header extends React.Component { 
 
     constructor(props) {
       super(props);
       this.state ={
         doelgroepen: []
-      }
+      };
     }
     componentDidMount(){
       this.setState({
         doelgroepen: Doelgroepen
       });
     }
-    SetDoelgroep(doelgroep){
-      this.setState({
-        selectedDoelgroep: doelgroep
-      });
-      console.log(this.state.selectedDoelgroep);
-      this.props.parentCallback(this.state.selectedDoelgroep);
-  };
+    
     
     render() {
       
@@ -42,7 +36,8 @@ class Header extends React.Component {
                 <h1>Antibioticagids</h1>
                 <ul>
                     {this.state.doelgroepen.map((doelgroep) => 
-                    <li id={doelgroep.name} key={doelgroep.name} className={this.state.selectedDoelgroep === doelgroep.name ? 'App-is-selected' :''}><div className="clickable" onClick={() => {this.SetDoelgroep(doelgroep.name)}}> {doelgroep.name}</div></li>
+                    <li id={doelgroep.name} key={doelgroep.name} className={this.state.selectedDoelgroep === doelgroep.name ? 'App-is-selected' :''}>
+                      <div className="clickable " onClick={() => this.props.parentCallback(doelgroep.name)}> {doelgroep.name}</div></li>
                     )}
                    </ul>
                 </div>
